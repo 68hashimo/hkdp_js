@@ -32,10 +32,14 @@ function bt(){
         alert('スマートフォンやで');
     } else if (ua.indexOf('Android') > -1) {
         // タブレット
-        alert('タブレットやで');
+        alert('androidやで');
     } else {
         // PC
         alert('PCやで');
         window.location.href = 'https://twitter.com/intent/tweet?text=本文';
     }
+}
+
+function search(){
+    window.location.href = 'https://twitter.com/search?q=%23ひらがな&src=trend_click&vertical=trends'
 }
