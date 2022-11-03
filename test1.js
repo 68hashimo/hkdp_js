@@ -33,6 +33,7 @@ function bt(){
     if (ua.indexOf('iPhone') > -1) {
         // スマートフォン
         alert('iPhoneやで');
+        window.location.href = 'twitter://post?message=test'
     } else if (ua.indexOf('Android') > -1) {
         // タブレット
         alert('androidやで');
