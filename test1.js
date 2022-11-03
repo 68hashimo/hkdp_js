@@ -59,4 +59,6 @@ function search(){
     tag=tag+a[1]+"求";
     tag=tag+a[0]+'譲';
     window.location.href = 'https://twitter.com/search?q=%23'+tag+'&src=typed_query';
+    
+    //端末ごとに分岐するようにしてね
 }
