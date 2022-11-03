@@ -30,13 +30,9 @@ document.querySelector(`select[id='r']`).addEventListener(`change`, function () 
 
 function bt(){
     const ua = navigator.userAgent;
-    if (ua.indexOf('iPhone') > -1) {
+    if (ua.indexOf('Mobile') > -1 || ua.indexOf('iPad') > -1 || ua.indexOf('Android') > -1) {
         // スマートフォン
-        alert('iPhoneやで');
-        window.location.href = 'twitter://post?message=%23'+t();
-    } else if (ua.indexOf('Android') > -1) {
-        // タブレット
-        alert('androidやで');
+        alert('appやで');
         window.location.href = 'twitter://post?message=%23'+t();
     } else {
         // PC
@@ -59,6 +55,6 @@ function search(){
     tag=tag+a[1]+"求";
     tag=tag+a[0]+'譲';
     window.location.href = 'https://twitter.com/search?q=%23'+tag+'&src=typed_query';
-    
+
     //端末ごとに分岐するようにしてね
 }
