@@ -33,24 +33,30 @@ function bt(){
     if (ua.indexOf('iPhone') > -1) {
         // スマートフォン
         alert('iPhoneやで');
-        window.location.href = 'twitter://post?message=test'
+        window.location.href = 'twitter://post?message=test'+t();
     } else if (ua.indexOf('Android') > -1) {
         // タブレット
         alert('androidやで');
-        window.location.href = 'twitter://post?message=test'
+        window.location.href = 'twitter://post?message=test'+t();
     } else {
         // PC
         alert('PCやで');
-        const eln = document.getElementById("tx")
-        eln.innerHTML=a;
-        //window.location.href = 'https://twitter.com/intent/tweet?text=本文';
+        //const eln = document.getElementById("tx")
+        //eln.innerHTML=a;
+        window.location.href = 'https://twitter.com/intent/tweet?text='+t();
     }
+}
+
+function t(){
+    var tag1="";
+    tag=tag+a[0]+"求";
+    tag=tag+a[1]+'譲';
+    return tag1;
 }
 
 function search(){
     var tag = "";
-    for(var i =0;i<a.length;i++){
-        tag+=a[i];
-    }
+    tag=tag+a[1]+"求";
+    tag=tag+a[0]+'譲';
     window.location.href = 'https://twitter.com/search?q=%23'+tag+'&src=typed_query';
 }
