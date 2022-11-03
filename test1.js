@@ -37,6 +37,7 @@ function bt(){
     } else if (ua.indexOf('Android') > -1) {
         // タブレット
         alert('androidやで');
+        window.location.href = 'twitter://post?message=test'
     } else {
         // PC
         alert('PCやで');
