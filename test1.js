@@ -27,7 +27,7 @@ document.querySelector(`select[id='r']`).addEventListener(`change`, function () 
 
 function bt(){
     const ua = navigator.userAgent;
-    if (ua.indexOf('iOS') > -1) {
+    if (ua.indexOf('iPhone') > -1) {
         // スマートフォン
         alert('スマートフォンやで');
     } else if (ua.indexOf('Android') > -1) {
