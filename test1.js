@@ -51,7 +51,7 @@ function bt(){
     if (ua.indexOf('Mobile') > -1 || ua.indexOf('iPad') > -1 || ua.indexOf('Android') > -1) {
         // スマートフォン
         alert('appやで');
-        window.location.href = 'twitter://post?message=%23'+t()+'%0A';
+        window.location.href = 'twitter://post?message=%23'+t()+'%0A'+tmp();
     } else {
         // PC
         alert('PCやで');
