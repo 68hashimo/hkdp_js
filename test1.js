@@ -116,10 +116,11 @@ function spl_pos(){
     var cc_pos = 0;
     for(var l of cok){
         if(l.indexOf("pos")>-1){
-            var c_pos = cok[1].split('=');
+            var c_pos = cok[cc_pos].split('=');
             var nc_pos = Number(c_pos[1]);
             return nc_pos;
         }
+        cc_pos++;
     }
 }
 
