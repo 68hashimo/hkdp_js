@@ -57,7 +57,7 @@ function bt(){
         alert('PCやで');
         //const eln = document.getElementById("tx")
         //eln.innerHTML=a;
-        window.location.href = 'https://twitter.com/intent/tweet?text=%23'+t()+' %23こんにちは%0A'+tmp();
+        window.location.href = 'https://twitter.com/intent/tweet?text=%23'+t()+'%0A'+tmp();
     }
 }
 
