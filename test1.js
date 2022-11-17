@@ -1,4 +1,8 @@
 var a = ["",""];
+const chr_lst=['澁谷 かのん','唐 可可','嵐 千砂都','平安名 すみれ','葉月 恋','桜小路 きな子','米女 メイ','若菜 四季','鬼塚 夏美'];
+const name_lst=['かのん','可可','千砂都','すみれ','恋','きな子','メイ','四季','夏美'];
+
+
 let options = document.querySelectorAll(`select[id='c'] option`);
 const el = document.getElementById("res")
 
@@ -7,7 +11,7 @@ document.querySelector(`select[id='c']`).addEventListener(`change`, function () 
 		//console.log(e.value, e.selected);
         if (e.selected){
             el.innerHTML=e.value;
-            a[0]=[e.value];
+            a[0]=chr_lst[e.value];
             var c = 0;
             for(var f of options){
                 if(f.selected){
@@ -30,7 +34,7 @@ document.querySelector(`select[id='r']`).addEventListener(`change`, function () 
 		//console.log(e.value, e.selected);
         if (e.selected){
             el2.innerHTML=e.value;
-            a[1]=[e.value];
+            a[1]=chr_lst[e.value];
             var c = 0;
             for(var f of options2){
                 if(f.selected){
@@ -51,13 +55,13 @@ function bt(){
     if (ua.indexOf('Mobile') > -1 || ua.indexOf('iPad') > -1 || ua.indexOf('Android') > -1) {
         // スマートフォン
         alert('appやで');
-        window.location.href = 'twitter://post?message=%23'+tradetag()+'%0A'+tmp();
+        window.location.href = 'twitter://post?message='+tmp();
     } else {
         // PC
         alert('PCやで');
         //const eln = document.getElementById("tx")
         //eln.innerHTML=a;
-        window.location.href = 'https://twitter.com/intent/tweet?text=%23'+tradetag()+'%0A'+tmp();
+        window.location.href = 'https://twitter.com/intent/tweet?text='+tmp();
     }
 }
 
@@ -79,7 +83,9 @@ function searchtag(){
 
 function tmp(){
     var el_tx=document.getElementById('tx');
-    var s='＜Liella 3rd ガチャ缶バッチ交換情報＞%0A【譲】%0A【求】%0A%23tradetag()%0A%23HKDP'
+    var s='＜Liella 3rd ガチャ缶バッチ交換情報＞%0A【譲】%0A【求】%0A%23'+tradetag()+'%0A%23HKDP%0A%23アプリ名%0A%23lovelive%0A%23'
+    var st=check_b();
+    s+=st;
     el_tx.innerHTML=s;
     return s;
 }
@@ -128,6 +134,23 @@ function spl_pos(){
         cc_pos++;
     }
 }
+
+
+
+//--------------------------------------------
+function check_b(){
+    var str = '痛バッグをつくりたいです' ;
+    var checks=document.getElementById("check_box");
+    if(checks.checked){
+        //console.log(str);
+        return str;
+    }
+    return '';
+}
+
+
+
+
 
 //-----------------------------------------------
 function redi(){
