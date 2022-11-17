@@ -51,28 +51,35 @@ function bt(){
     if (ua.indexOf('Mobile') > -1 || ua.indexOf('iPad') > -1 || ua.indexOf('Android') > -1) {
         // スマートフォン
         alert('appやで');
-        window.location.href = 'twitter://post?message=%23'+t()+'%0A'+tmp();
+        window.location.href = 'twitter://post?message=%23'+tradetag()+'%0A'+tmp();
     } else {
         // PC
         alert('PCやで');
         //const eln = document.getElementById("tx")
         //eln.innerHTML=a;
-        window.location.href = 'https://twitter.com/intent/tweet?text=%23'+t()+'%0A'+tmp();
+        window.location.href = 'https://twitter.com/intent/tweet?text=%23'+tradetag()+'%0A'+tmp();
     }
 }
 
-function t(){
+function tradetag(){
     var tag1="";
     tag1=tag1+a[0]+"求";
     tag1=tag1+a[1]+'譲';
     return tag1;
 }
 
+function searchtag(){
+    var tag = "";
+    tag=tag+a[1]+"求";
+    tag=tag+a[0]+'譲';
+    return tag;
+}
+
 
 
 function tmp(){
     var el_tx=document.getElementById('tx');
-    var s='＜Liella 3rd ガチャ缶バッチ交換情報＞%0A【譲】%0A【求】てすとですわ'
+    var s='＜Liella 3rd ガチャ缶バッチ交換情報＞%0A【譲】%0A【求】%0A%23 tradetag() %0A%23 HKDP'
     el_tx.innerHTML=s;
     return s;
 }
@@ -80,18 +87,15 @@ function tmp(){
 //-----------------------------------------------------
 
 function search(){
-    var tag = "";
-    tag=tag+a[1]+"求";
-    tag=tag+a[0]+'譲';
     const ua1 = navigator.userAgent;
     if (ua1.indexOf('Mobile') > -1 || ua1.indexOf('iPad') > -1 || ua1.indexOf('Android') > -1) {
         // スマートフォン
         alert('appやで');
-        window.location.href = 'twitter://search?query=%23'+tag;
+        window.location.href = 'twitter://search?query=%23'+searchtag();
     } else {
         // PC
         alert('PCやで');
-        window.location.href = 'https://twitter.com/search?q=%23'+tag+'&src=typed_query';
+        window.location.href = 'https://twitter.com/search?q=%23'+searchtag()+'&src=typed_query';
     }
 
 
