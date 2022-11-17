@@ -55,16 +55,20 @@ document.querySelector(`select[id='r']`).addEventListener(`change`, function () 
 
 function bt(){
     const ua = navigator.userAgent;
-    if (ua.indexOf('Mobile') > -1 || ua.indexOf('iPad') > -1 || ua.indexOf('Android') > -1) {
-        // スマートフォン
-        //alert('appやで');
-        window.location.href = 'twitter://post?message='+tmp();
-    } else {
-        // PC
-        //alert('PCやで');
-        //const eln = document.getElementById("tx")
-        //eln.innerHTML=a;
-        window.location.href = 'https://twitter.com/intent/tweet?text='+tmp();
+    if(flg()){
+        if (ua.indexOf('Mobile') > -1 || ua.indexOf('iPad') > -1 || ua.indexOf('Android') > -1) {
+            // スマートフォン
+            //alert('appやで');
+            window.location.href = 'twitter://post?message='+tmp();
+        } else {
+            // PC
+            //alert('PCやで');
+            //const eln = document.getElementById("tx")
+            //eln.innerHTML=a;
+            window.location.href = 'https://twitter.com/intent/tweet?text='+tmp();
+        }
+    }else{
+        alert("同じキャラが選択されています");
     }
 }
 
@@ -83,7 +87,7 @@ function searchtag(){
 }
 
 
-
+//アプリ名とイベント名の変更よろしく☆
 function tmp(){
     var el_tx=document.getElementById('tx');
     var s='＜Liella 3rd ガチャ缶バッチ交換情報＞%0A【譲】'+a[0]+'%0A【求】'+a[1]+'%0A%23'+tradetag()+'%0A%23HKDP%0A%23アプリ名%0A%23lovelive%0A%23イベント名%0A%23'+a[0]+'%0A%23'+a[1];
@@ -97,17 +101,19 @@ function tmp(){
 
 function search(){
     const ua1 = navigator.userAgent;
-    if (ua1.indexOf('Mobile') > -1 || ua1.indexOf('iPad') > -1 || ua1.indexOf('Android') > -1) {
-        // スマートフォン
-        //alert('appやで');
-        window.location.href = 'twitter://search?query=%23'+searchtag();
-    } else {
-        // PC
-        //alert('PCやで');
-        window.location.href = 'https://twitter.com/search?q=%23'+searchtag()+'&src=typed_query';
+    if(flg()){
+        if (ua1.indexOf('Mobile') > -1 || ua1.indexOf('iPad') > -1 || ua1.indexOf('Android') > -1) {
+            // スマートフォン
+            //alert('appやで');
+            window.location.href = 'twitter://search?query=%23'+searchtag();
+        } else {
+            // PC
+            //alert('PCやで');
+            window.location.href = 'https://twitter.com/search?q=%23'+searchtag()+'&src=typed_query';
+        }
+    }else{
+        alert("同じキャラが選択されています");
     }
-
-
 }
 
 //--------------------------------------------------
@@ -151,7 +157,14 @@ function check_b(){
     return '';
 }
 
-
+//-------------------------------------------------
+function flg(){
+    if(spl_req()==spl_pos()){
+        return false;
+    }else{
+        return true;
+    }
+}
 
 
 
