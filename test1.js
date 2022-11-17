@@ -89,7 +89,7 @@ function searchtag(){
 
 //アプリ名とイベント名の変更よろしく☆
 function tmp(){
-    var el_tx=document.getElementById('tx');
+    //var el_tx=document.getElementById('tx');
     var s='＜Liella 3rd ガチャ缶バッチ交換情報＞%0A【譲】'+a[0]+'%0A【求】'+a[1]+'%0A%23'+tradetag()+'%0A%23HKDP%0A%23アプリ名%0A%23lovelive%0A%23イベント名%0A%23'+a[0]+'%0A%23'+a[1];
     var st=check_b();
     s+=st;
