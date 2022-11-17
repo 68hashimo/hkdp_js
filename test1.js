@@ -69,8 +69,9 @@ function t(){
 }
 
 
-var el_tx=document.getElementById('tx');
+
 function tmp(){
+    var el_tx=document.getElementById('tx');
     var s='＜Liella 3rd ガチャ缶バッチ交換情報＞%0A【譲】%0A【求】てすとですわ'
     el_tx.innerHTML=s;
     return s;
