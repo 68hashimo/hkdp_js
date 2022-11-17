@@ -1,5 +1,6 @@
 var a = ["",""];
-const chr_lst=['澁谷 かのん','唐 可可','嵐 千砂都','平安名 すみれ','葉月 恋','桜小路 きな子','米女 メイ','若菜 四季','鬼塚 夏美'];
+var b =["",""];
+const chr_lst=['澁谷かのん','唐可可','嵐千砂都','平安名すみれ','葉月恋','桜小路きな子','米女メイ','若菜四季','鬼塚夏美'];
 const name_lst=['かのん','可可','千砂都','すみれ','恋','きな子','メイ','四季','夏美'];
 
 
@@ -10,8 +11,9 @@ document.querySelector(`select[id='c']`).addEventListener(`change`, function () 
 	for (let e of options) {
 		//console.log(e.value, e.selected);
         if (e.selected){
-            el.innerHTML=e.value;
+            //el.innerHTML=e.value;
             a[0]=chr_lst[e.value];
+            b[0]=name_lst[e.value];
             var c = 0;
             for(var f of options){
                 if(f.selected){
@@ -33,8 +35,9 @@ document.querySelector(`select[id='r']`).addEventListener(`change`, function () 
 	for (let e of options2) {
 		//console.log(e.value, e.selected);
         if (e.selected){
-            el2.innerHTML=e.value;
+            //el2.innerHTML=e.value;
             a[1]=chr_lst[e.value];
+            b[1]=name_lst[e.value];
             var c = 0;
             for(var f of options2){
                 if(f.selected){
@@ -54,11 +57,11 @@ function bt(){
     const ua = navigator.userAgent;
     if (ua.indexOf('Mobile') > -1 || ua.indexOf('iPad') > -1 || ua.indexOf('Android') > -1) {
         // スマートフォン
-        alert('appやで');
+        //alert('appやで');
         window.location.href = 'twitter://post?message='+tmp();
     } else {
         // PC
-        alert('PCやで');
+        //alert('PCやで');
         //const eln = document.getElementById("tx")
         //eln.innerHTML=a;
         window.location.href = 'https://twitter.com/intent/tweet?text='+tmp();
@@ -67,15 +70,15 @@ function bt(){
 
 function tradetag(){
     var tag1="";
-    tag1=tag1+a[0]+"求";
-    tag1=tag1+a[1]+'譲';
+    tag1=tag1+b[0]+"求";
+    tag1=tag1+b[1]+'譲';
     return tag1;
 }
 
 function searchtag(){
     var tag = "";
-    tag=tag+a[1]+"求";
-    tag=tag+a[0]+'譲';
+    tag=tag+b[1]+"求";
+    tag=tag+b[0]+'譲';
     return tag;
 }
 
@@ -83,10 +86,10 @@ function searchtag(){
 
 function tmp(){
     var el_tx=document.getElementById('tx');
-    var s='＜Liella 3rd ガチャ缶バッチ交換情報＞%0A【譲】%0A【求】%0A%23'+tradetag()+'%0A%23HKDP%0A%23アプリ名%0A%23lovelive%0A%23'
+    var s='＜Liella 3rd ガチャ缶バッチ交換情報＞%0A【譲】'+a[0]+'%0A【求】'+a[1]+'%0A%23'+tradetag()+'%0A%23HKDP%0A%23アプリ名%0A%23lovelive%0A%23イベント名%0A%23'+a[0]+'%0A%23'+a[1];
     var st=check_b();
     s+=st;
-    el_tx.innerHTML=s;
+    //el_tx.innerHTML=s;
     return s;
 }
 
@@ -96,11 +99,11 @@ function search(){
     const ua1 = navigator.userAgent;
     if (ua1.indexOf('Mobile') > -1 || ua1.indexOf('iPad') > -1 || ua1.indexOf('Android') > -1) {
         // スマートフォン
-        alert('appやで');
+        //alert('appやで');
         window.location.href = 'twitter://search?query=%23'+searchtag();
     } else {
         // PC
-        alert('PCやで');
+        //alert('PCやで');
         window.location.href = 'https://twitter.com/search?q=%23'+searchtag()+'&src=typed_query';
     }
 
@@ -139,7 +142,7 @@ function spl_pos(){
 
 //--------------------------------------------
 function check_b(){
-    var str = '痛バッグをつくりたいです' ;
+    var str = '%0A痛バッグをつくりたいです' ;
     var checks=document.getElementById("check_box");
     if(checks.checked){
         //console.log(str);
@@ -167,20 +170,26 @@ if(r_spl[0]!="" && r_spl[1]!=""){
     var op_req =in_req.options[spl_req()].value;
     console.log(op_req);
     in_req.options[spl_req()].selected = true;
-    el.innerHTML=op_req;
-    a[0]=op_req;
+    //el.innerHTML=chr_lst[op_req];
+    a[0]=chr_lst[op_req];
+    b[0]=name_lst[op_req];
 
     var in_pos = document.getElementById("r");
     var op_pos =in_pos.options[spl_pos()].value;
     console.log(op_pos);
     in_pos.options[spl_pos()].selected = true;
-    el2.innerHTML=op_pos;
-    a[1]=op_pos;
+    //el2.innerHTML=chr_lst[op_pos];
+    a[1]=chr_lst[op_pos];
+    b[1]=name_lst[op_pos];
 }else{
-    el.innerHTML="選択してください";
-    el2.innerHTML="選択してください";
+    //el.innerHTML="選択してください";
+    //el2.innerHTML="選択してください";
+    console.log("選択してください");
 }
-alert('reload');
+//alert('reload');
 
 }
 window.onload=redi();
+
+
+//innerhtmlは消しておく
