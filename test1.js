@@ -159,7 +159,8 @@ function check_b(){
 
 //-------------------------------------------------
 function flg(){
-    if(spl_req()==spl_pos()){
+    var flg_cok = document.cookie.split(';');
+    if(spl_req()==spl_pos()|| flg_cok.length==1){
         return false;
     }else{
         return true;
@@ -178,7 +179,11 @@ if(document.cookie == ""){
 
 var r_spl=document.cookie.split(";");
 
-if(r_spl[0]!="" && r_spl[1]!=""){
+if(r_spl[0]!="" || r_spl[1]!=""){
+    //el.innerHTML="選択してください";
+    //el2.innerHTML="選択してください";
+    console.log("選択してください");
+}else{
     var in_req = document.getElementById("c");
     var op_req =in_req.options[spl_req()].value;
     console.log(op_req);
@@ -194,10 +199,6 @@ if(r_spl[0]!="" && r_spl[1]!=""){
     //el2.innerHTML=chr_lst[op_pos];
     a[1]=chr_lst[op_pos];
     b[1]=name_lst[op_pos];
-}else{
-    //el.innerHTML="選択してください";
-    //el2.innerHTML="選択してください";
-    console.log("選択してください");
 }
 //alert('reload');
 
