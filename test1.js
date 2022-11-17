@@ -79,7 +79,7 @@ function searchtag(){
 
 function tmp(){
     var el_tx=document.getElementById('tx');
-    var s='＜Liella 3rd ガチャ缶バッチ交換情報＞%0A【譲】%0A【求】%0A%23 tradetag() %0A%23 HKDP'
+    var s='＜Liella 3rd ガチャ缶バッチ交換情報＞%0A【譲】%0A【求】%0A%23tradetag()%0A%23HKDP'
     el_tx.innerHTML=s;
     return s;
 }
