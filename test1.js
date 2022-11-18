@@ -207,7 +207,7 @@ if(r_spl.length==1){
 //window.onload=redi();
 
 if (window.performance.navigation.type == 1) {
-    alert("リロードされました");
+    //alert("リロードされました");
     redi();
     console.log(a,b);
 }else{
