@@ -74,17 +74,17 @@ function bt(){
 }
 
 function tradetag(){
-    var tag1="";
-    tag1=tag1+b[0]+"求";
-    tag1=tag1+b[1]+'譲';
-    return tag1;
+    var ttag="";
+    ttag=ttag+b[0]+"求";
+    ttag=ttag+b[1]+'譲';
+    return ttag;
 }
 
 function searchtag(){
-    var tag = "";
-    tag=tag+b[1]+"求";
-    tag=tag+b[0]+'譲';
-    return tag;
+    var stag = "";
+    stag=stag+b[1]+"求";
+    stag=stag+b[0]+'譲';
+    return stag;
 }
 
 
