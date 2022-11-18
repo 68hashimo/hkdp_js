@@ -68,7 +68,8 @@ function bt(){
             window.location.href = 'https://twitter.com/intent/tweet?text='+tmp();
         }
     }else{
-        alert("同じキャラが選択されています");
+        console.log(a);
+        alert("入力を確認してください");
     }
 }
 
@@ -112,7 +113,7 @@ function search(){
             window.location.href = 'https://twitter.com/search?q=%23'+searchtag()+'&src=typed_query';
         }
     }else{
-        alert("同じキャラが選択されています");
+        alert("入力を確認してください");
     }
 }
 
@@ -174,19 +175,19 @@ function redi(){
 if(document.cookie == ""){
     console.log("none");
 }else{
-    console.log(a);
+    console.log("exist");
 }
 
 var r_spl=document.cookie.split(";");
-
-if(r_spl[0]!="" || r_spl[1]!=""){
+//console.log(r_spl)
+if(r_spl.length==1){
     //el.innerHTML="選択してください";
     //el2.innerHTML="選択してください";
     console.log("選択してください");
 }else{
     var in_req = document.getElementById("c");
     var op_req =in_req.options[spl_req()].value;
-    console.log(op_req);
+    //console.log(op_req);
     in_req.options[spl_req()].selected = true;
     //el.innerHTML=chr_lst[op_req];
     a[0]=chr_lst[op_req];
@@ -194,7 +195,7 @@ if(r_spl[0]!="" || r_spl[1]!=""){
 
     var in_pos = document.getElementById("r");
     var op_pos =in_pos.options[spl_pos()].value;
-    console.log(op_pos);
+    //console.log(op_pos);
     in_pos.options[spl_pos()].selected = true;
     //el2.innerHTML=chr_lst[op_pos];
     a[1]=chr_lst[op_pos];
@@ -203,7 +204,13 @@ if(r_spl[0]!="" || r_spl[1]!=""){
 //alert('reload');
 
 }
-window.onload=redi();
+//window.onload=redi();
 
-
-//innerhtmlは消しておく
+if (window.performance.navigation.type == 1) {
+    alert("リロードされました");
+    redi();
+    console.log(a,b);
+}else{
+    redi();
+    console.log(a,b);
+}
